@@ -1,0 +1,5 @@
+<article *ngIf="$post | async as post">
+    <h2>{{post.title | titlecase}}</h2>
+    <p>{{post.body | textShorter | titlecase}}</p>
+    <a routerLink="/users/{{post.userId}}/posts">See all posts by this author</a>
+</article>
