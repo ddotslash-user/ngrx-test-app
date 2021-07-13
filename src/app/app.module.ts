@@ -13,6 +13,15 @@ import { PostCardComponent } from './shared/post-card/post-card.component';
 import { PostComponent } from './pages/post/post.component';
 import { TextShorter } from './pipes/text-shorter';
 import { UserPostsComponent } from './pages/user-posts/user-posts.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreatePostComponent } from './pages/create-post/create-post.component';
+import { Store, StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { postsReducer } from './store/posts.reducer';
+import { PostsEffects } from './store/posts.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { getPosts } from './store/posts.actions';
 
 
 @NgModule({
@@ -25,15 +34,24 @@ import { UserPostsComponent } from './pages/user-posts/user-posts.component';
     PostCardComponent,
     PostComponent,
     TextShorter,
-    UserPostsComponent
+    UserPostsComponent,
+    CreatePostComponent, 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-  
+    ReactiveFormsModule,
+    StoreModule.forRoot({posts: postsReducer}, {}),
+    EffectsModule.forRoot([PostsEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor(private store: Store) {
+    this.store.dispatch(getPosts());
+  }
+}

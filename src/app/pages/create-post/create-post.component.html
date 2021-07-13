@@ -1,0 +1,16 @@
+<form [formGroup]="createPostForm" (ngSubmit)="formSubmit()"> 
+    <label>
+        Title:
+        <input type="text" formControlName="title">
+    </label>
+    <label>
+        Body:
+        <input type="text" formControlName="body">
+    </label>
+    <label>
+        User ID:
+        <input type="text" formControlName="authorId">
+    </label>
+    <p>Complete the form to enable button.</p>
+    <button [disabled]="!createPostForm.valid">Create Post</button>
+</form>
