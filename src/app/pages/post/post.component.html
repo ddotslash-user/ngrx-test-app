@@ -1,6 +1,12 @@
 <article *ngIf="post$ | async as post">
-    <h2>{{post.title | titlecase}}</h2>
-    <p>{{post.body | textShorter | titlecase}}</p>
-    <a routerLink="/users/{{post.userId}}/posts">See all posts by this author</a>
-    <button (click)="deletePost(post.id)">Delete</button>
+    <header class="post__header">
+        <h1 class="post__title title title--black">{{post.title | titlecase}}</h1>
+    </header>
+    <section class="post__body">
+        {{post.body | textShorter | titlecase}}
+    </section>
+    <footer class="post__footer">
+        <button class="post__author-button button button--t-black"  routerLink="/users/{{post.userId}}/posts" >See all posts by author</button>
+        <button  class="post__delete-button button button--t-black button--b-red" (click)="deletePost(post.id)">Delete Post</button>
+    </footer>   
 </article>

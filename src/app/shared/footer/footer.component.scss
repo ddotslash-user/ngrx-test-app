@@ -1,3 +1,12 @@
-footer {
-    padding: 20px;
+@import '../../../assets/styles/variables';
+
+.footer {
+    padding: 5px 10px;
+    background: $black;
+}
+
+.footer__copy {
+    color: $white;
+    font-size: 1.1rem;
+    font-weight: bold;
 }

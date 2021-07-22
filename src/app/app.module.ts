@@ -22,6 +22,7 @@ import { PostsEffects } from './store/posts.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { getPosts } from './store/posts.actions';
+import { LogoComponent } from './shared/logo/logo.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { getPosts } from './store/posts.actions';
     PostComponent,
     TextShorter,
     UserPostsComponent,
-    CreatePostComponent, 
+    CreatePostComponent,
+    LogoComponent, 
   ],
   imports: [
     BrowserModule,

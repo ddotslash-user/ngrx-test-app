@@ -1,0 +1,16 @@
+@import '../../../assets/styles/variables';
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    border-bottom: 1px solid $gray-dark;
+    cursor: pointer;
+    &:hover {
+        background: #EEEEEE ;
+    }
+}
+
+.post-card__body {
+    margin-top: 5px;
+}

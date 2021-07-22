@@ -1,0 +1,17 @@
+.post {
+    display: flex;
+    flex-direction: column;
+}
+
+.post__header {
+    margin-bottom: 10px;
+}
+
+.post__footer {
+    display: flex;
+    margin-top: 15px;
+}
+
+.post__delete-button {
+    margin-left: 10px;
+}

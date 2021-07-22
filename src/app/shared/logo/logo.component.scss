@@ -1,0 +1,12 @@
+@import '../../../assets/styles/variables';
+
+.logo {
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    color: $white;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+}
