@@ -1,4 +1,8 @@
-h1 {
-    text-align: center;
+@import '../../../assets/styles/variables';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: $black;
     padding: 20px;
 }

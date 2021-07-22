@@ -1,0 +1,35 @@
+@import './variables';
+
+.button {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border: 2px solid $green;
+    padding: 5px 10px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.1rem;
+    color: $white;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.button:disabled, button[disabled] {
+    border: 2px solid #BFBFBF;
+    color: #BFBFBF;
+    cursor: not-allowed;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.button--t-black {
+    color: $black;
+}
+
+.button--b-red {
+    border-color: $red;
+}

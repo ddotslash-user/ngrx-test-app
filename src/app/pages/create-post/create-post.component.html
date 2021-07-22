@@ -1,16 +1,18 @@
-<form [formGroup]="createPostForm" (ngSubmit)="formSubmit()"> 
-    <label>
-        Title:
-        <input type="text" formControlName="title">
+
+<h2 class="title">Create new post</h2>
+<form class="form" [formGroup]="createPostForm"  (ngSubmit)="formSubmit()">
+    <label class="form__input-block">
+        <span class="form__title">Title</span>
+        <input class="form__input" type="text" placeholder="Some title..."  formControlName="title">
     </label>
-    <label>
-        Body:
-        <input type="text" formControlName="body">
+    <label class="form__input-block">
+        <span class="form__title">Text</span>
+        <textarea class="form__input form__input--text" placeholder="Some text..."  formControlName="body"></textarea> 
     </label>
-    <label>
-        User ID:
-        <input type="text" formControlName="authorId">
+    <label class="form__input-block">
+        <span class="form__title">Author</span>
+        <input class="form__input form__input--number" type="number" placeholder="101" min="0" formControlName="authorId">  
     </label>
-    <p>Complete the form to enable button.</p>
-    <button [disabled]="!createPostForm.valid">Create Post</button>
+    <p class="form__text">Complete the form to enable button.</p>
+    <button class="form__button button button--t-black" type="submit" [disabled]="!createPostForm.valid">Send</button>
 </form>

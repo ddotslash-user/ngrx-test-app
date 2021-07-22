@@ -1,0 +1,11 @@
+@import './variables';
+
+.title {
+    color: $gray-dark;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.title--black {
+    color: $black;
+}
